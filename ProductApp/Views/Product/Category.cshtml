@@ -24,14 +24,14 @@
                         <td>@cat.CategoryID</td>
                         <td>@cat.CategoryName</td>
                         <td>
-                            <button class="btn btn-danger">Delete</button>
-                            <button class="btn btn-success">Update</button>
-                            <button class="btn btn-primary">Details</button>
+                            <a href="/Product/DeleteCategory/@cat.CategoryID" class="btn btn-danger">Delete</a>
+                            <a href="/Product/GetCategory/@cat.CategoryID" class="btn btn-success">Update</a>
+                            <a class="btn btn-primary">Details</a>
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
-        <button class="btn btn-info">Add New Category</button>
+        <a href="/Product/AddCategory" class="btn btn-info">Add New Category</a>
     </div>
 
