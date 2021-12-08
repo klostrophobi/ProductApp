@@ -1,0 +1,39 @@
+﻿@model List<ProductApp.Models.Customer>
+
+@{
+    ViewData["Title"] = "Customer";
+    Layout = "~/Views/Shared/_LayoutNavbar.cshtml";
+}
+
+<h2>Customer</h2>
+
+
+    <br />
+
+    <div>
+        <table class="table table-bordered">
+            <tr>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th>Customer Last Name</th>
+                <th>Operations</th>
+            </tr>
+            <tbody>
+                @foreach (var cst in Model)
+                {
+                    <tr>
+                        <td>@cst.CustomerID</td>
+                        <td>@cst.CustomerName</td>
+                        <td>@cst.CustomerLastName</td>
+                        <td>
+                            <button class="btn btn-danger">Delete</button>
+                            <button class="btn btn-success">Update</button>
+                            <button class="btn btn-primary">Details</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button class="btn btn-info">Add New Customer</button>
+    </div>
+

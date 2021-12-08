@@ -1,0 +1,43 @@
+﻿@model List<ProductApp.Models.Product>
+
+@{
+    ViewData["Title"] = "Product";
+    Layout = "~/Views/Shared/_LayoutNavbar.cshtml";
+}
+
+<h2>Product</h2>
+
+
+    <br />
+
+    <div>
+        <table class="table table-bordered">
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Product Category</th>
+                <th>Product Stock</th>
+                <th>Product Price</th>
+                <th>Operations</th>
+            </tr>
+            <tbody>
+                @foreach (var pr in Model)
+                {
+                    <tr>
+                        <td>@pr.ProductID</td>
+                        <td>@pr.ProductName</td>
+                        <td>@pr.ProductCategory</td>
+                        <td>@pr.Stock</td>
+                        <td>@pr.Price</td>
+                        <td>
+                            <button class="btn btn-danger">Delete</button>
+                            <button class="btn btn-success">Update</button>
+                            <button class="btn btn-primary">Details</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button class="btn btn-info">Add New Product</button>
+    </div>
+
