@@ -4,22 +4,15 @@ using System.Linq;
 
 namespace ProductApp.Controllers
 {
-    public class ProductController : Controller
+    public class CategoryController : Controller
     {
-        Context c =new Context();
+        Context c = new Context();
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        #region Category
-
-        [HttpGet]
-        public IActionResult Category()
         {
             var cat = c.TB_CATEGORIES.ToList();
             return View(cat);
         }
+
         [HttpGet]
         public IActionResult AddCategory()
         {
@@ -30,7 +23,7 @@ namespace ProductApp.Controllers
         {
             c.TB_CATEGORIES.Add(category);
             c.SaveChanges();
-            return RedirectToAction("Category");
+            return RedirectToAction("Index");
         }
         public IActionResult DeleteCategory(int ID)
         {
@@ -40,7 +33,7 @@ namespace ProductApp.Controllers
                 c.TB_CATEGORIES.Remove(categoryToDelete);
                 c.SaveChanges();
             }
-            return RedirectToAction("Category");
+            return RedirectToAction("Index");
         }
         public IActionResult GetCategory(int ID)
         {
@@ -55,25 +48,7 @@ namespace ProductApp.Controllers
                 categoryToUpdate.CategoryName = category.CategoryName;
                 c.SaveChanges();
             }
-            return RedirectToAction("Category");
-        }
-        #endregion
-
-        [HttpGet]
-        public IActionResult Customer()
-        {
-            var cst = c.TB_CUSTOMERS.ToList();
-            return View(cst);
-        }
-        [HttpGet]
-        public IActionResult Product()
-        {
-            var pr = c.TB_PRODUCTS.ToList();
-            return View(pr);
-        }
-        public IActionResult Sales()
-        {
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }
