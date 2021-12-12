@@ -14,5 +14,6 @@ namespace ProductApp.Models
         public DbSet<Customer> TB_CUSTOMERS { get; set; }
         public DbSet<Product> TB_PRODUCTS { get; set; }
         public DbSet<Sales> TB_SALES { get; set; }
+        public DbSet<Admin> TB_ADMIN { get; set; }
     }
 }
