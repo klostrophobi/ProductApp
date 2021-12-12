@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProductApp.Models;
 using System.Linq;
@@ -8,6 +9,7 @@ namespace ProductApp.Controllers
     public class CategoryController : Controller
     {
         Context c = new Context();
+        [Authorize]
         public IActionResult Index()
         {
             var cat = c.TB_CATEGORIES.ToList();
