@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ProductApp.Models;
 using System.Linq;
 
@@ -50,5 +51,11 @@ namespace ProductApp.Controllers
             }
             return RedirectToAction("Index");
         }
+        //public IActionResult GoCategoryDetails(int ID)
+        //{
+        //    var products = c.TB_PRODUCTS.Include(x => x.Category).ToList().Where(x => x.Category.CategoryID == ID).ToList();
+        //    return RedirectToAction("/Product/Index/", ID);
+        //}
     }
 }
+    

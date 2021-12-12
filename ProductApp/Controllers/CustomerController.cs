@@ -4,12 +4,13 @@ using System.Linq;
 
 namespace ProductApp.Controllers
 {
-    public class ProductOperationsController : Controller
+    public class CustomerController : Controller
     {
-        Context c =new Context();
+        Context c = new Context();
         public IActionResult Index()
         {
-            return View();
+            var cst = c.TB_CUSTOMERS.ToList();
+            return View(cst);
         }
     }
 }

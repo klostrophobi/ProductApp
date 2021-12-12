@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProductApp.Models
 {
@@ -7,5 +8,7 @@ namespace ProductApp.Models
         [Key]
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
+        public string CategoryDetails { get; set; }
+        public List<Product> Products { get; set; }
     }
 }

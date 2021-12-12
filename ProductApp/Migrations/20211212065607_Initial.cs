@@ -3,25 +3,26 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProductApp.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "categories",
+                name: "TB_CATEGORIES",
                 columns: table => new
                 {
                     CategoryID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CategoryName = table.Column<string>(nullable: true)
+                    CategoryName = table.Column<string>(nullable: true),
+                    CategoryDetails = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_categories", x => x.CategoryID);
+                    table.PrimaryKey("PK_TB_CATEGORIES", x => x.CategoryID);
                 });
 
             migrationBuilder.CreateTable(
-                name: "customers",
+                name: "TB_CUSTOMERS",
                 columns: table => new
                 {
                     CustomerID = table.Column<int>(nullable: false)
@@ -31,11 +32,11 @@ namespace ProductApp.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_customers", x => x.CustomerID);
+                    table.PrimaryKey("PK_TB_CUSTOMERS", x => x.CustomerID);
                 });
 
             migrationBuilder.CreateTable(
-                name: "products",
+                name: "TB_PRODUCTS",
                 columns: table => new
                 {
                     ProductID = table.Column<int>(nullable: false)
@@ -47,11 +48,11 @@ namespace ProductApp.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_products", x => x.ProductID);
+                    table.PrimaryKey("PK_TB_PRODUCTS", x => x.ProductID);
                 });
 
             migrationBuilder.CreateTable(
-                name: "sales",
+                name: "TB_SALES",
                 columns: table => new
                 {
                     SalesID = table.Column<int>(nullable: false)
@@ -62,23 +63,23 @@ namespace ProductApp.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_sales", x => x.SalesID);
+                    table.PrimaryKey("PK_TB_SALES", x => x.SalesID);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "categories");
+                name: "TB_CATEGORIES");
 
             migrationBuilder.DropTable(
-                name: "customers");
+                name: "TB_CUSTOMERS");
 
             migrationBuilder.DropTable(
-                name: "products");
+                name: "TB_PRODUCTS");
 
             migrationBuilder.DropTable(
-                name: "sales");
+                name: "TB_SALES");
         }
     }
 }

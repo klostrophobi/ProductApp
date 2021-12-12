@@ -26,7 +26,7 @@
                     <tr>
                         <td>@pr.ProductID</td>
                         <td>@pr.ProductName</td>
-                        <td>@pr.ProductCategory</td>
+                        <td>@pr.Category.CategoryName</td>
                         <td>@pr.Stock</td>
                         <td>@pr.Price</td>
                         <td>
@@ -38,6 +38,6 @@
                 }
             </tbody>
         </table>
-        <button class="btn btn-info">Add New Product</button>
+        <a href="/Product/AddProduct" class="btn btn-info">Add New Product</a>
     </div>
 

@@ -1,0 +1,32 @@
+﻿@model ProductApp.Models.Product
+@{
+    ViewData["Title"] = "AddProduct";
+    Layout = "~/Views/Shared/_LayoutNavbar.cshtml";
+}
+
+<h2>Adding Product</h2>
+
+<form class="form-group" method="post">
+    <b>Product Name</b>
+
+    @Html.TextBoxFor(x=>x.ProductName, new{@class="form-control"})
+
+    <br />
+    <b>Product Price</b>
+
+    @Html.TextBoxFor(x=>x.Price, new{@class="form-control"})
+
+    <br />
+    <b>Product Stock</b>
+
+    @Html.TextBoxFor(x=>x.Stock, new{@class="form-control"})
+
+    <br />
+    <b>Product Category</b>
+
+    @Html.DropDownListFor(x=>x.Category.CategoryID, (List<SelectListItem>) ViewBag.Categories, new{@class="form-control"})
+
+    <br />
+
+    <button href="/Product/AddProduct" class="btn btn-success">Add</button>
+</form>
